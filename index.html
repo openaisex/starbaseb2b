@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbase B2B — Industrial Supply Chain & Business Network</title>
+    <meta name="description" content="Connecting enterprises with Starbase Texas logistics, warehousing, and commercial supply chain solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0d14;
+            --bg-card: #121824;
+            --bg-card-hover: #1a2234;
+            --border-color: #232d42;
+            --accent-blue: #2563eb;
+            --accent-cyan: #06b6d4;
+            --accent-glow: rgba(37, 99, 235, 0.15);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 13, 20, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background: var(--border-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent-glow);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Sections */
+        .content-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-tag {
+            color: var(--accent-cyan);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 750px;
+        }
+
+        /* Enterprise Grid */
+        .enterprise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(37, 99, 235, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .card-category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.825rem;
+            color: var(--text-dim);
+        }
+
+        .card-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Placeholder state for self-adding enterprises */
+        .card-placeholder {
+            border: 2px dashed var(--border-color);
+            background: transparent;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .card-placeholder:hover {
+            border-color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .placeholder-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dim);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 1.5rem;
+            background: #07090e;
+            color: var(--text-dim);
+            font-size: 0.875rem;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 0.5rem; wrap: wrap; }
+            .footer-container { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand">
+                STARBASE B2B
+                <span class="brand-badge">NETWORK</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#logistics">Logistics</a></li>
+                    <li><a href="#warehouse">Warehouse</a></li>
+                    <li><a href="#supply">Supply</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero">
+        <span class="hero-badge">Industrial & Commercial Hub</span>
+        <h1>Starbase Commercial Ecosystem & B2B Directory</h1>
+        <p>Connecting regional aerospace logistics operators, commercial warehousing solutions, and local industrial suppliers across Texas and Louisiana.</p>
+    </section>
+
+    <!-- Starbase Logistics Section -->
+    <section id="logistics" class="content-section">
+        <div class="section-header">
+            <span class="section-tag">Logistics Division</span>
+            <h2 class="section-title">Starbase Logistics Network</h2>
+            <p class="section-desc">Specialized freight handlers, heavy haulage providers, and port operations supporting industrial transport near Boca Chica and Brownsville.</p>
+        </div>
+        <div class="enterprise-grid">
+            <div class="card">
+                <div>
+                    <span class="card-category">Freight & Transport</span>
+                    <h3 class="card-title">Rio Grande Heavy Freight</h3>
+                    <p class="card-text">Heavy transport, oversized equipment delivery, and dedicated trucking corridor management for South Texas manufacturing sites.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Location: Brownsville, TX</span>
+                    <a href="#" class="card-link">Details &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-category">Port & Marine Services</span>
+                    <h3 class="card-title">Gulf Maritime Cargo</h3>
+                    <p class="card-text">Barge transport, marine logistics, and specialized dockside unloading capabilities servicing industrial clients.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Location: Port Isabel, TX</span>
+                    <a href="#" class="card-link">Details &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Add Enterprise Placeholder -->
+            <div class="card card-placeholder">
+                <div class="placeholder-icon">+</div>
+                <h3 class="card-title" style="font-size: 1rem;">Add Logistics Enterprise</h3>
+                <p class="card-text" style="margin-bottom:0;">Insert your business listing HTML snippet here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Starbase Warehouse Section -->
+    <section id="warehouse" class="content-section">
+        <div class="section-header">
+            <span class="section-tag">Warehousing Division</span>
+            <h2 class="section-title">Starbase Warehouse & Facilities</h2>
+            <p class="section-desc">Industrial yard storage, secure indoor warehousing, climate-controlled storage, and material staging areas in close proximity to Starbase.</p>
+        </div>
+        <div class="enterprise-grid">
+            <div class="card">
+                <div>
+                    <span class="card-category">Industrial Yard</span>
+                    <h3 class="card-title">Boca Chica Staging Grounds</h3>
+                    <p class="card-text">Gated, high-capacity outdoor yard storage suitable for raw steel, oversized structural parts, and heavy equipment staging.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Location: Hwy 4 Corridor, TX</span>
+                    <a href="#" class="card-link">Details &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-category">Secure Warehousing</span>
+                    <h3 class="card-title">Space City Logistics Hub</h3>
+                    <p class="card-text">200,000 sq ft climate-controlled indoor storage facility with 24/7 security and inventory tracking systems.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Location: Harlingen, TX</span>
+                    <a href="#" class="card-link">Details &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Add Enterprise Placeholder -->
+            <div class="card card-placeholder">
+                <div class="placeholder-icon">+</div>
+                <h3 class="card-title" style="font-size: 1rem;">Add Warehouse Partner</h3>
+                <p class="card-text" style="margin-bottom:0;">Insert your business listing HTML snippet here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Starbase Supply Section -->
+    <section id="supply" class="content-section">
+        <div class="section-header">
+            <span class="section-tag">Supply Chain Division</span>
+            <h2 class="section-title">Starbase Supply & Industrial Goods</h2>
+            <p class="section-desc">Raw material suppliers, specialized hardware distributors, welding gas providers, and industrial hardware operations.</p>
+        </div>
+        <div class="enterprise-grid">
+            <div class="card">
+                <div>
+                    <span class="card-category">Raw Materials</span>
+                    <h3 class="card-title">Texas Stainless & Alloy Co.</h3>
+                    <p class="card-text">Industrial grade stainless steel tubing, alloy sheets, structural beam supply, and rapid local job site delivery.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Location: McAllen / Brownsville, TX</span>
+                    <a href="#" class="card-link">Details &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-category">Industrial Gases</span>
+                    <h3 class="card-title">Gulf Coast Cryogenics & Gas</h3>
+                    <p class="card-text">Bulk nitrogen, liquid oxygen, argon, and industrial welding gas supplies for manufacturing and fabrication facilities.</p>
+                </div>
+                <div class="card-meta">
+                    <span>Location: Corpus Christi, TX</span>
+                    <a href="#" class="card-link">Details &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Add Enterprise Placeholder -->
+            <div class="card card-placeholder">
+                <div class="placeholder-icon">+</div>
+                <h3 class="card-title" style="font-size: 1rem;">Add Supplier Listing</h3>
+                <p class="card-text" style="margin-bottom:0;">Insert your business listing HTML snippet here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer Section (With Platform & Handle Labels) -->
+<footer style="background: #07090e; border-top: 1px solid var(--border-color); padding: 4rem 1.5rem 2rem; color: var(--text-muted); font-size: 0.9rem;">
+    <div style="max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        
+        <!-- Brand & Mission Column -->
+        <div style="grid-column: span 1;">
+            <a href="#" class="brand" style="margin-bottom: 1rem;">
+                STARBASE B2B
+                <span class="brand-badge">NETWORK</span>
+            </a>
+            <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; margin-top: 0.75rem;">
+                Connecting aerospace logistics operators, commercial warehousing, and industrial suppliers across the Starbase Texas ecosystem.
+            </p>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div>
+            <h4 style="color: #fff; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.2rem; letter-spacing: 0.03em;">Platform Navigation</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem;">
+                <li><a href="#home" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Home / Overview</a></li>
+                <li><a href="#logistics" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Logistics Directory</a></li>
+                <li><a href="#warehouse" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Warehousing Facilities</a></li>
+                <li><a href="#supply" style="color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Supply Chain Index</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Matrix Column (Detailed Platform Labels) -->
+        <div>
+            <h4 style="color: #fff; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.2rem; letter-spacing: 0.03em;">Social Matrix</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem;">
+                
+                <!-- X (Twitter) Account -->
+                <li style="display: flex; flex-direction: column; gap: 0.1rem;">
+                    <span style="color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; font-weight: 600;">X (Twitter) Account</span>
+                    <a href="https://x.com" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        @Starbase Logistics
+                    </a>
+                </li>
+
+                <!-- Facebook Page -->
+                <li style="display: flex; flex-direction: column; gap: 0.1rem;">
+                    <span style="color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; font-weight: 600;">Facebook Page</span>
+                    <a href="https://facebook.com" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        @Starbase Warehouse
+                    </a>
+                </li>
+
+                <!-- YouTube Channel -->
+                <li style="display: flex; flex-direction: column; gap: 0.1rem;">
+                    <span style="color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; font-weight: 600;">YouTube Channel</span>
+                    <a href="https://youtube.com" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+                        @Starbase Supply
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- Enterprise Partner / Inquiry Column -->
+        <div>
+            <h4 style="color: #fff; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.2rem; letter-spacing: 0.03em;">Business Partnerships</h4>
+            <p style="color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                Looking to list your logistics, warehouse, or industrial supply enterprise on StarbaseB2B?
+            </p>
+            <a href="mailto:contact@starbaseb2b.com" style="display: inline-block; background: var(--bg-card); border: 1px solid var(--border-color); color: var(--accent-cyan); font-size: 0.85rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-cyan)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                Submit Listing Request &rarr;
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Sub-footer Bottom Bar -->
+    <div style="max-width: var(--max-width); margin: 0 auto; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem; color: var(--text-dim);">
+        <div>
+            &copy; 2026 StarbaseB2B.com. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+            <a href="#" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a>
+            <a href="#" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a>
+            <a href="#" style="color: var(--text-dim); text-decoration: none;">Industrial Directory</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
